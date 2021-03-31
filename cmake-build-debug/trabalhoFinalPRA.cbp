@@ -76,6 +76,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/avl_tree.c">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/avl_tree.h">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/b_tree.c">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/b_tree.h">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
 		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/main.c">
 			<Option target="trabalhoFinalPRA"/>
 		</Unit>

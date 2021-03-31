@@ -3,4 +3,4 @@ project(trabalhoFinalPRA C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(trabalhoFinalPRA main.c)
+add_executable(trabalhoFinalPRA main.c avl_tree.c avl_tree.h b_tree.c b_tree.h)

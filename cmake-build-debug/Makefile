@@ -143,6 +143,60 @@ trabalhoFinalPRA/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/build
 .PHONY : trabalhoFinalPRA/fast
 
+avl_tree.o: avl_tree.c.o
+
+.PHONY : avl_tree.o
+
+# target to build an object file
+avl_tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/avl_tree.c.o
+.PHONY : avl_tree.c.o
+
+avl_tree.i: avl_tree.c.i
+
+.PHONY : avl_tree.i
+
+# target to preprocess a source file
+avl_tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/avl_tree.c.i
+.PHONY : avl_tree.c.i
+
+avl_tree.s: avl_tree.c.s
+
+.PHONY : avl_tree.s
+
+# target to generate assembly for a file
+avl_tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/avl_tree.c.s
+.PHONY : avl_tree.c.s
+
+b_tree.o: b_tree.c.o
+
+.PHONY : b_tree.o
+
+# target to build an object file
+b_tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/b_tree.c.o
+.PHONY : b_tree.c.o
+
+b_tree.i: b_tree.c.i
+
+.PHONY : b_tree.i
+
+# target to preprocess a source file
+b_tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/b_tree.c.i
+.PHONY : b_tree.c.i
+
+b_tree.s: b_tree.c.s
+
+.PHONY : b_tree.s
+
+# target to generate assembly for a file
+b_tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trabalhoFinalPRA.dir/build.make CMakeFiles/trabalhoFinalPRA.dir/b_tree.c.s
+.PHONY : b_tree.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -179,6 +233,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... trabalhoFinalPRA"
+	@echo "... avl_tree.o"
+	@echo "... avl_tree.i"
+	@echo "... avl_tree.s"
+	@echo "... b_tree.o"
+	@echo "... b_tree.i"
+	@echo "... b_tree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

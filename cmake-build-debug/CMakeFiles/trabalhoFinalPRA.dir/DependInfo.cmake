@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/joao/codigos/pra/trabalhoFinalPRA/avl_tree.c" "/home/joao/codigos/pra/trabalhoFinalPRA/cmake-build-debug/CMakeFiles/trabalhoFinalPRA.dir/avl_tree.c.o"
+  "/home/joao/codigos/pra/trabalhoFinalPRA/b_tree.c" "/home/joao/codigos/pra/trabalhoFinalPRA/cmake-build-debug/CMakeFiles/trabalhoFinalPRA.dir/b_tree.c.o"
   "/home/joao/codigos/pra/trabalhoFinalPRA/main.c" "/home/joao/codigos/pra/trabalhoFinalPRA/cmake-build-debug/CMakeFiles/trabalhoFinalPRA.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
