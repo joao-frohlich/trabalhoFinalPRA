@@ -91,6 +91,12 @@
 		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/main.c">
 			<Option target="trabalhoFinalPRA"/>
 		</Unit>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/utils.c">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
+		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/utils.h">
+			<Option target="trabalhoFinalPRA"/>
+		</Unit>
 		<Unit filename="/home/joao/codigos/pra/trabalhoFinalPRA/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
