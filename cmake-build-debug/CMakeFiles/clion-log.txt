@@ -1,4 +1,0 @@
-/home/joao/CLion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/joao/codigos/pra/trabalhoFinalPRA
--- Configuring done
--- Generating done
--- Build files have been written to: /home/joao/codigos/pra/trabalhoFinalPRA/cmake-build-debug

@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/trabalhoFinalPRA.dir/main.c.o CMakeFiles/trabalhoFinalPRA.dir/avl_tree.c.o CMakeFiles/trabalhoFinalPRA.dir/b_tree.c.o CMakeFiles/trabalhoFinalPRA.dir/utils.c.o  -o trabalhoFinalPRA 
