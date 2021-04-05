@@ -278,3 +278,4 @@ Thumbs.db #thumbnail cache on Windows
 
 tests/worst
 tests/random
+tests/plot
