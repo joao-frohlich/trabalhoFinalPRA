@@ -6,8 +6,8 @@
 #include "b_tree.h"
 
 int main() {
-    //avl_tree *avlTree = create_avl_tree();
-    b_tree *bTree = b_tree_create(2);
+    avl_tree *avlTree = create_avl_tree();
+    //b_tree *bTree = b_tree_create(2);
     int u[100];
     for (int i = 0; i < 100; i++) u[i] = 0;
     int start_value = time(NULL);
@@ -19,11 +19,10 @@ int main() {
         printf("%d ", x);
         u[x] = 1;
         tot++;
-        b_tree_insert(bTree,x);
+        insert_avl_node(avlTree,x);
     }
     printf("\n\n");
-    print_b_tree(bTree->root, 2, 0);
+    print_avl_tree(avlTree->root);
     printf("\n");
-    printf("Hello World\n");
     return 0;
 }

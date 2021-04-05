@@ -42,13 +42,22 @@ avl_tree_node *right_simple_rotation(avl_tree *tree, avl_tree_node *node){
     avl_tree_node *left = node->left;
 
     node->left = left->right;
+    if (left->right != NULL){
+        left->right->parent = node;
+    }
     node->parent = left;
 
     left->right = node;
     left->parent = parent;
 
-    if (tree->root == node){
+    if (parent == NULL){
         tree->root = left;
+    } else {
+        if (parent->left == node){
+            parent->left = left;
+        } else {
+            parent->right = left;
+        }
     }
 
     return left;
@@ -64,13 +73,22 @@ avl_tree_node *left_simple_rotation(avl_tree *tree, avl_tree_node *node){
     avl_tree_node *right = node->right;
 
     node->right = right->left;
+    if (right->left != NULL){
+        right->left->parent = node;
+    }
     node->parent = right;
 
     right->left = node;
     right->parent = parent;
 
-    if (tree->root == node){
+    if (parent == NULL){
         tree->root = right;
+    } else {
+        if (parent->left == node){
+            parent->left = right;
+        } else {
+            parent->right = right;
+        }
     }
 
     return right;
@@ -98,7 +116,7 @@ int compute_node_balance_factor(avl_tree_node *node){
         balance_factor += compute_node_height(node->left)+1;
     }
     if (node->right != NULL){
-        balance_factor -= compute_node_height(node->right)+1;
+        balance_factor -= (compute_node_height(node->right)+1);
     }
     return balance_factor;
 }
@@ -106,17 +124,17 @@ int compute_node_balance_factor(avl_tree_node *node){
 int balancing(avl_tree *tree, avl_tree_node *node){
     while (node != NULL){
         int balance_factor = compute_node_balance_factor(node);
-        if (balance_factor >= 2){
-            if (compute_node_balance_factor(node->left) >= 0){
-                right_simple_rotation(tree, node);
+        if (balance_factor > 1){
+            if (compute_node_balance_factor(node->left) > 0){
+                node = right_simple_rotation(tree, node);
             } else {
-                right_double_rotation(tree, node);
+                node = right_double_rotation(tree, node);
             }
-        } else if (balance_factor <= -2){
-            if (compute_node_balance_factor(node->right) <= 0){
-                left_simple_rotation(tree, node);
+        } else if (balance_factor < -1){
+            if (compute_node_balance_factor(node->right) < 0){
+                node = left_simple_rotation(tree, node);
             } else {
-                left_double_rotation(tree, node);
+                node = left_double_rotation(tree, node);
             }
         }
         node = node->parent;
@@ -125,11 +143,8 @@ int balancing(avl_tree *tree, avl_tree_node *node){
 }
 
 void print_avl_tree(avl_tree_node *node){
+    if (node == NULL) return;
     printf("%d ", node->value);
-    if (node->left != NULL){
-        print_avl_tree(node->left);
-    }
-    if (node->right != NULL){
-        print_avl_tree(node->right);
-    }
+    print_avl_tree(node->left);
+    print_avl_tree((node->right));
 }
