@@ -1,6 +1,7 @@
 #include "avl_tree.h"
 #include "utils.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 avl_tree *create_avl_tree(){
     avl_tree *tree = (avl_tree*)malloc(sizeof(avl_tree));
@@ -31,7 +32,7 @@ int insert_avl_node(avl_tree *tree, int value){
         } else {
             aux_node->right = node;
         }
-        balancing(tree, tree->root);
+        balancing(tree, node);
     }
     return 1;
 }
@@ -103,25 +104,32 @@ int compute_node_balance_factor(avl_tree_node *node){
 }
 
 int balancing(avl_tree *tree, avl_tree_node *node){
-    if (node->left != NULL){
-        balancing(tree, node->left);
-    }
-    if (node->right != NULL){
-        balancing(tree, node->right);
-    }
-    int balance_factor = compute_node_balance_factor(node);
-    if (balance_factor >= 2){
-        if (compute_node_balance_factor(node->left) >= 0){
-            node = right_simple_rotation(tree, node);
-        } else {
-            node = right_double_rotation(tree, node);
+    while (node != NULL){
+        int balance_factor = compute_node_balance_factor(node);
+        if (balance_factor >= 2){
+            if (compute_node_balance_factor(node->left) >= 0){
+                right_simple_rotation(tree, node);
+            } else {
+                right_double_rotation(tree, node);
+            }
+        } else if (balance_factor <= -2){
+            if (compute_node_balance_factor(node->right) <= 0){
+                left_simple_rotation(tree, node);
+            } else {
+                left_double_rotation(tree, node);
+            }
         }
-    } else if (balance_factor <= -2){
-        if (compute_node_balance_factor(node->right) <= 0){
-            node = left_simple_rotation(tree, node);
-        } else {
-            node = left_double_rotation(tree, node);
-        }
+        node = node->parent;
     }
     return 1;
+}
+
+void print_avl_tree(avl_tree_node *node){
+    printf("%d ", node->value);
+    if (node->left != NULL){
+        print_avl_tree(node->left);
+    }
+    if (node->right != NULL){
+        print_avl_tree(node->right);
+    }
 }

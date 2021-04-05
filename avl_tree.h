@@ -21,5 +21,6 @@ avl_tree_node *left_double_rotation(avl_tree *tree, avl_tree_node *node);
 int compute_node_height(avl_tree_node *node);
 int compute_node_balance_factor(avl_tree_node *node);
 int balancing(avl_tree *tree, avl_tree_node *node);
+void print_avl_tree(avl_tree_node *node);
 
 #endif //AVL_TREE_H

@@ -18,5 +18,6 @@ b_tree_node *allocate_b_tree_node (int t);
 int b_tree_insert(b_tree *tree, int k);
 int b_tree_split_child(b_tree_node *x, int i, int t);
 int b_tree_insert_nonfull(b_tree_node *x, int k, int t);
+void print_b_tree(b_tree_node *x, int t, int d);
 
 #endif //B_TREE_H
