@@ -17,6 +17,7 @@ int insert_avl_node(avl_tree *tree, int value, int *conta){
     node->left = NULL;
     node->right = NULL;
     node->value = value;
+    node->height = 0;
     if (tree->root == NULL){
         tree->root = node;
     } else {
@@ -35,6 +36,7 @@ int insert_avl_node(avl_tree *tree, int value, int *conta){
         } else {
             aux_node->right = node;
         }
+        compute_node_height(aux_node, conta);
         balancing(tree, node, conta);
     }
     return 1;
@@ -63,6 +65,8 @@ avl_tree_node *right_simple_rotation(avl_tree *tree, avl_tree_node *node, int *c
             parent->right = left;
         }
     }
+
+    compute_node_height(node, conta);
 
     return left;
 }
@@ -97,6 +101,8 @@ avl_tree_node *left_simple_rotation(avl_tree *tree, avl_tree_node *node, int *co
         }
     }
 
+    compute_node_height(node, conta);
+
     return right;
 }
 
@@ -107,31 +113,40 @@ avl_tree_node *left_double_rotation(avl_tree *tree, avl_tree_node *node, int *co
 }
 
 int compute_node_height(avl_tree_node *node, int *conta){
-    *conta = *conta+1;
-    int height = 0;
-    if (node->left != NULL){
-        height = compute_node_height(node->left, conta)+1;
+    while (node != NULL){
+        *conta = *conta+1;
+        int new_height = 0;
+        if (node->left != NULL) {
+            new_height = node->left->height;
+        }
+        if (node->right != NULL) {
+            new_height = max(new_height, node->right->height);
+        }
+        if (new_height+1 == node->height) {
+            break;
+        } else {
+            node->height = new_height+1;
+            node = node->parent;
+        }
     }
-    if (node->right != NULL){
-        height = max(height,compute_node_height(node->right, conta)+1);
-    }
-    return height;
+    return 1;
 }
 
 int compute_node_balance_factor(avl_tree_node *node, int *conta){
     *conta = *conta+1;
     int balance_factor = 0;
     if (node->left != NULL){
-        balance_factor += compute_node_height(node->left, conta)+1;
+        balance_factor += node->left->height+1;
+        //balance_factor += compute_node_height(node->left, conta)+1;
     }
     if (node->right != NULL){
-        balance_factor -= (compute_node_height(node->right, conta)+1);
+        balance_factor -= (node->right->height+1);
+        //balance_factor -= (compute_node_height(node->right, conta)+1);
     }
     return balance_factor;
 }
 
 int balancing(avl_tree *tree, avl_tree_node *node, int *conta){
-    *conta = *conta+1;
     while (node != NULL){
         *conta = *conta+1;
         int balance_factor = compute_node_balance_factor(node, conta);
