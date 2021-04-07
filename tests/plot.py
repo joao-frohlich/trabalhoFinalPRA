@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 
@@ -18,6 +19,8 @@ def make_plot(title, avl, b):
     plt.title(title)
     plt.ylabel('Esforço Computacional')
     plt.xlabel('Tamanho da entrada')
+
+    plt.xticks(np.arange(0, 101, 10))
 
     plt.savefig(path + title + ".png")
 

@@ -8,7 +8,7 @@
 int main() {
     int conta_op_avl_tree = 0, conta_op_b_tree = 0;
     avl_tree *avlTree = create_avl_tree(&conta_op_avl_tree);
-    b_tree *bTree = b_tree_create(2, &conta_op_b_tree);
+    b_tree *bTree = b_tree_create(5, &conta_op_b_tree);
 
     int n;
     scanf("%d", &n);
