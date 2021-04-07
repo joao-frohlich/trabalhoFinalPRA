@@ -24,8 +24,8 @@ def make_plot(title, avl, b):
 
 
 def get_data_worst():
-    avl = []
-    b = []
+    avl = [0]
+    b = [0]
     for sz in range(1, 101):
         path = f"./worst/sz{sz:03d}/"
         file_name = f"t0sz{sz:03d}.out.txt"
@@ -37,8 +37,8 @@ def get_data_worst():
 
 
 def get_data_random():
-    avl = []
-    b = []
+    avl = [0]
+    b = [0]
     for sz in range(1, 101):
         path = f"./random/sz{sz:03d}/"
         avl_sum, b_sum = 0, 0
