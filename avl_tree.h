@@ -6,6 +6,7 @@ typedef struct avl_node{
     struct avl_node *left;
     struct avl_node *right;
     int value;
+    int height;
 } avl_tree_node;
 
 typedef struct{
